@@ -11,11 +11,10 @@ def choose_num(cnt):
     if cnt == N:
         print_answer()
         return
-        
+
     for i in range(1, K + 1):
-        if cnt >= 2:
-            if answer[-1] == answer[-2] == i:
-                return
+        if cnt >= 2 and answer[-1] ==i and answer[-2] == i:
+            continue
         answer.append(i)
         choose_num(cnt + 1)
         answer.pop()
