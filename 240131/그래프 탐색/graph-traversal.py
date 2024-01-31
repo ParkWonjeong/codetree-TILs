@@ -13,8 +13,8 @@ def dfs(vertex):
 
     # 재귀적으로 탐색 및 카운트
     for curr_v in graph[vertex]:
-        if visited[curr_v] == 0:
-            visited[curr_v] = 1
+        if not visited[curr_v]:
+            visited[curr_v] = True
             vertex_cnt += 1
             dfs(curr_v)
 
@@ -25,7 +25,7 @@ for i in range(M):
     graph[v1].append(v2)
     graph[v2].append(v1)
 
-visited[i] = 1
+visited[i] = True
 dfs(1)
 
 print(vertex_cnt)
