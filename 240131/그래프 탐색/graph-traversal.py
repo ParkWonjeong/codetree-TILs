@@ -1,6 +1,4 @@
 N, M = tuple(map(int, input().split()))
-
-#index를 1번 부터 사용하기 위해 m+1만큼 할당합니다.
 graph = [[] for _ in range(N + 1)]
 
 visited = [False for _ in range(N + 1)]
