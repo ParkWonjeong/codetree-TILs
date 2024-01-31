@@ -13,7 +13,7 @@ def bfs():
         for dr, dc in ((1, 0), (0, 1), (-1, 0), (0, -1)):
             nr, nc = r + dr, c + dc
 
-            if 0 <= nr < n and 0 <= nc < n and a[nr][nc] == 1 and not visited[nr][nc]:
+            if 0 <= nr < n and 0 <= nc < m and a[nr][nc] == 1 and not visited[nr][nc]:
                 visited[nr][nc] = 1
                 dist[nr][nc] = dist[r][c] + 1
                 q.append((nr, nc))
