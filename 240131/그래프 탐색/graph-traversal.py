@@ -25,7 +25,7 @@ for i in range(M):
     graph[v1].append(v2)
     graph[v2].append(v1)
 
-visited[i] = True
+visited[1] = True
 dfs(1)
 
 print(vertex_cnt)
