@@ -28,7 +28,7 @@ def dfs(x, y):
         new_x, new_y = x + dx, y + dy
 
         if can_go(new_x, new_y):
-            visited[new_x][new_y]
+            visited[new_x][new_y] = 1
             dfs(new_x, new_y)
 
 visited[0][0] = 1
