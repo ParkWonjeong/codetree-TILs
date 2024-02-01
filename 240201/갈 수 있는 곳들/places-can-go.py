@@ -12,9 +12,12 @@ visited = [
 
 q = deque()
 
+cnt = 0
+
 def bfs():
     while q:
         x, y = q.popleft()
+        visited[x][y] = 1
 
         dxs, dys = [0, 1, 0, -1], [1, 0, -1, 0]
         for dx, dy in zip(dxs, dys):
@@ -22,17 +25,19 @@ def bfs():
             if can_go(new_x, new_y):
                 q.append((new_x, new_y))
                 visited[new_x][new_y] = 1
+                
 
 def in_range(x, y):
     return 0 <= x and x < n and 0 <= y and y < n
 
 def can_go(x, y):
-    return in_range(x, y) and visited[x][y] == 0 and grid[x][y] == 0
+    return in_range(x, y) and not visited[x][y] and not grid[x][y]
 
 for _ in range(k):
     x, y = tuple(map(int, input().split()))
-    q.append((x, y))
-    bfs()
+    q.append((x - 1, y - 1))
+
+bfs()
 
 cnt = 0
 for i in range(n):
