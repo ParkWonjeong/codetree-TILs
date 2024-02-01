@@ -10,12 +10,9 @@ visited = [
     for _ in range(n)
 ]
 
-cnt = 0
 q = deque()
 
 def bfs():
-    global cnt
-    
     while q:
         x, y = q.popleft()
 
@@ -25,7 +22,6 @@ def bfs():
             if can_go(new_x, new_y):
                 q.append((new_x, new_y))
                 visited[new_x][new_y] = 1
-                cnt += 1
 
 def in_range(x, y):
     return 0 <= x and x < n and 0 <= y and y < n
@@ -37,5 +33,11 @@ for _ in range(k):
     x, y = tuple(map(int, input().split()))
     q.append((x, y))
     bfs()
+
+cnt = 0
+for i in range(n):
+    for j in range(n):
+        if visited[i][j] == 1:
+            cnt += 1
 
 print(cnt)
