@@ -27,9 +27,4 @@ for i in range(1, n):
     for j in range(1, n):
         dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) + grid[i][j]
 
-ans = INT_MIN
-for i in range(n):
-    for j in range(n):
-        ans = max(ans, dp[i][j])
-
-print(ans)
+print(dp[n - 1][n - 1])
