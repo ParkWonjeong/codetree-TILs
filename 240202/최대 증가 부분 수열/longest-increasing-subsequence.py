@@ -1,16 +1,11 @@
 n = int(input())
-arr = list(map(int, input().split()))
+arr = [0] + list(map(int, input().split()))
+dp = [0 for _ in range(n + 1)]
 
-increasing_arr_cnt = []
 
-for i in range(n):
-    increasing_arr = []
-    increasing_arr.append(arr[i])
+for i in range(1, n + 1):
+    for j in range(i):
+        if arr[j] < arr[i]:
+            dp[i] = max(dp[i], dp[j] + 1)
 
-    for j in range(i + 1, n):
-        if arr[j] > increasing_arr[-1]:
-            increasing_arr.append(arr[j])
-    
-    increasing_arr_cnt.append(len(increasing_arr))
-    
-print(max(increasing_arr_cnt))
+print(max(dp))
