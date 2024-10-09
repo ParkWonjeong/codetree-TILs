@@ -5,5 +5,6 @@ def leap_year(i):
         if i % 100 == 0 and i % 400 != 0:
             return "false"
         return "true"
+    return "false"
 
 print(leap_year(y))
