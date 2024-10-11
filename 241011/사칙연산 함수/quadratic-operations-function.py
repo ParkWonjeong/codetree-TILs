@@ -23,4 +23,4 @@ elif symbol == "/":
 elif symbol == "*":
     print(a, symbol, b, "=", multiple_number(a, b))
 else:
-    False
+    print(False)
