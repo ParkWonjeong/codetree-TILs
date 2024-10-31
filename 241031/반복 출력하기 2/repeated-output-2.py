@@ -1,6 +1,9 @@
 n = int(input())
 def print_n(n):
-    for _ in range(n):
-        print("HelloWorld")
+    if == 0:
+        return
+
+    print_n(n - 1):
+    print("HelloWorld")
 
 print_n(n)
