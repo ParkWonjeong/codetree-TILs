@@ -1,6 +1,6 @@
 n = int(input())
 def print_n(n):
-    if == 0:
+    if n == 0:
         return
 
     print_n(n - 1):
